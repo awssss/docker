@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  tomcat:
+    image: centos 
+    command: /usr/bin/sleep 10000
+    networks:
+      - overlay
+    links:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    networks:
+      - overlay
+    volumes:
+       - /data:/var/lib/mysql4
+    environment:
+       - MYSQL_ROOT_PASSWORD=root
+    
+networks:
+  overlay:

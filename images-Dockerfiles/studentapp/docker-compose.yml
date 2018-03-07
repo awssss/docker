@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  tomcat:
+    image: raghudevops25/studentapp:v2
+    ports:
+      - 8080:8080
+    networks:
+      - overlay
+    links:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    networks:
+      - overlay
+    volumes:
+       - /data:/var/lib/mysql
+    environment:
+       - MYSQL_ROOT_PASSWORD=root
+    
+networks:
+  overlay:
