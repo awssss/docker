@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myhttpd-rc1-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: myhttpd
+  ports:
+  - port: 80

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nsex
+spec:
+  containers:
+  - name: centos
+    image: centos
+    imagePullPolicy: Always
+    args:
+      - /bin/sleep
+      - "6000"

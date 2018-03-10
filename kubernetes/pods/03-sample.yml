@@ -8,3 +8,6 @@ spec:
       image: raghudevops25/httpd:v1
       ports:
         - containerPort: 80
+          hostPort: 80
+  nodeSelector:
+      ENV: DEV 

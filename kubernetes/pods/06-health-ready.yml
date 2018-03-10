@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: readyness
+  name: readyness-exec
+spec:
+  containers:
+  - name: httpd
+    image: raghudevops25/health
+    imagePullPolicy: Always
+    readinessProbe:
+      tcpSocket:
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5

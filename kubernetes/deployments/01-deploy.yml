@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: myhttpd-deploy1
+  labels:
+    app: myhttpd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myhttpd
+  template:
+    metadata:
+      labels:
+        app: myhttpd
+    spec:
+      containers:
+      - name: httpd
+        image: raghudevops25/httpd:v2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

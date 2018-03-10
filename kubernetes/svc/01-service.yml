@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myhttpd
+spec:
+  type: LoadBalancer
+  selector:
+    app: mywebhttpd
+  ports:
+  - port: 80

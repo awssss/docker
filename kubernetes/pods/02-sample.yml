@@ -3,8 +3,12 @@ kind: Pod
 metadata:
   name: sample01
 spec:
+  selector:
+     app: mywebhttpd
   containers:
     - name: httpd
       image: raghudevops25/httpd:v1
       ports:
         - containerPort: 80
+  nodeSelector:
+      ENV: DEV 

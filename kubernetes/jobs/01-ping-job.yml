@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ping
+spec:
+  template:
+    spec:
+      containers:
+      - name: centos
+        image: centos
+        command: ["ping",  "-c", "10", "google.com"]
+      restartPolicy: Never
