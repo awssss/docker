@@ -1,0 +1,5 @@
+FROM centos
+RUN yum install httpd -y
+RUN sed -i -e '/^Listen/ c Listen 8000' /etc/httpd/conf/httpd.conf
+#EXPOSE 8000
+CMD /usr/sbin/httpd -DFOREGROUND

@@ -1,0 +1,6 @@
+FROM centos
+RUN yum install httpd -y
+ADD comman.sh /comman.sh
+RUN chmod +x /comman.sh
+#CMD /usr/sbin/httpd -DFOREGROUND
+CMD /comman.sh
