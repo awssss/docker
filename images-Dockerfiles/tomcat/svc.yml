@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mytomcat-rc1-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: mytomcat
+  ports:
+  - port: 8080
+#  - targetPort: 8080
+
